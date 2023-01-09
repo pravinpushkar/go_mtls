@@ -1,0 +1,18 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: prav-http-binding
+spec:
+  type: bindings.http
+  version: v1
+  metadata:
+  - name: url
+    value: https://localhost:8443/hello
+  - name: MTLSEnable
+    value: true
+  - name: MTLSRootCA
+    value: /Users/pravin/go_projects/src/github.com/dapr/tls/certs/ca.pem
+  - name: MTLSClientCert
+    value: /Users/pravin/go_projects/src/github.com/dapr/tls/certs/client.pem
+  - name: MTLSClientKey
+    value: /Users/pravin/go_projects/src/github.com/dapr/tls/certs/client.key
