@@ -63,10 +63,6 @@ func byeHandler(w http.ResponseWriter, r *http.Request) {
 
 func printTLSConnectionInfo(tlsState *tls.ConnectionState) {
 	fmt.Println(">>>>>>>>>>>>>>>>> TLS connectionState <<<<<<<<<<<<<<<<<<")
-	err := tlsState.PeerCertificates[0].VerifyHostname("localhost")
-	if err != nil {
-		log.Fatal("Failed to verify hostname")
-	}
 	fmt.Println("ServerName: ", tlsState.ServerName)
 	log.Printf("HandshakeComplete: %t", tlsState.HandshakeComplete)
 
